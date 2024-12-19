@@ -11,6 +11,7 @@ import SEO from '../components/SEO';
 export default function Index({ posts, globalData }) {
   return (
     <Layout>
+        
       <SEO title={globalData.name} description={globalData.blogTitle} />
       <Header name={globalData.name} />
       <main className="w-full">
@@ -62,7 +63,6 @@ export default function Index({ posts, globalData }) {
 export async function getServerSideProps() {
   const posts = await getPosts();
   const globalData = getGlobalData()
-
 
   return { props: { posts, globalData } };
 }
